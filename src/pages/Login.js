@@ -9,6 +9,11 @@ import { saveUser as saveUserToFirestore } from '../firebase/helpers/userHelper'
 
 export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
+  const signIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .catch((error) => alert(error.message));
+  };
 
   const showToast = useToast();
   const dispatchAction = useDispatch();
