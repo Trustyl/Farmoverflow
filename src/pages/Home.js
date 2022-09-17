@@ -26,7 +26,7 @@ export default function Home() {
           <p>
             <span>Farmlance</span> is an online community to ask questions about
             your plants conditions . You can ask questions or help others by answering their questions .
-            Its basically <span>StackOverflow</span> but for farmers or the agric idustry
+            Its basically <span>StackOverflow</span> but for farmers or the agric industry
           </p>
           <button onClick={() => history.push('/login')}>Find solutions to your problem</button>
         </Content>
