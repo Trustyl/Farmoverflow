@@ -55,7 +55,7 @@ export default function Ask() {
   const user = useSelector(state => state.user?.user);
 
   const isNotEmpty = (str) => str.trim().length !== 0;
-  const canAskQuestion = isNotEmpty(title) && isNotEmpty(description) && isNotEmpty(body)&& preview.length && tags.length !== 0;
+  const canAskQuestion = isNotEmpty(title) && isNotEmpty(description) && isNotEmpty(body)&& tags.length !== 0;
  
   const maxNumber = 69;
   const onChange = (imageList, addUpdateIndex) => {
