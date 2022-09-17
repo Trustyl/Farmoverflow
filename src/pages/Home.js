@@ -28,7 +28,7 @@ export default function Home() {
             your plants conditions . You can ask questions or help others by answering their questions .
             Its basically <span>StackOverflow</span> but for farmers or the agric idustry
           </p>
-          <button onClick={() => history.push('/page/guilty')}>Give me a guilty feeling</button>
+          <button onClick={() => history.push('src/pages/Login.js')}>Find solutions to your problem</button>
         </Content>
       </Container>
     </AuthWrapper>
