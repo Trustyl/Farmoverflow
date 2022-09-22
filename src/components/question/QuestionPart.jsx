@@ -102,7 +102,7 @@ export default function QuestionPart({ question, user }) {
           <p className="description">{question?.description}</p>
         </div>
         <MarkdownPreview markdown={question?.body} />
-        <img src={question?.preview}></img>
+        <img src={question?.pictures}></img>
       </div>
 
       <div className="utils">

@@ -4,7 +4,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 30px;
+  height: 1000px;
+  
+  
+    background: var(--question-color);
+  
+  
+    
 
   .profile-hide {
     @media (max-width: 1446px) {
@@ -14,8 +20,11 @@ export const Container = styled.div`
 `
 
 export const PostContainer = styled.div`
-  width: 100%;
-  margin-right: 20px;
+  width: 700px;
+  height: 5px;
+  margin-left: 30px;
+  margin-top: 30px;
+  
 
   @media (max-width: 1446px) {
     margin-right: 0px;
@@ -23,16 +32,18 @@ export const PostContainer = styled.div`
 `
 
 export const Post = styled.div`
-  background: var(--secondary-color);
+  background: var(--black);
   padding: 50px;
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
   margin-bottom: 20px;
+  box-shadow: 4px 4px 8px #000000;
 
   h3 {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 900;
+    color: white;
   }
 
   p {
@@ -99,11 +110,13 @@ export const Post = styled.div`
 `
 
 export const UserDetailsContainer = styled.div`
-  width: 480px;
-  background: var(--secondary-color);
+  width: 450px;
+  background: var(--profile);
   border-radius: 25px;
   padding: 40px;
-  height: fit-content;
+  margin-top:160px;
+  height:fits content;
+  margin-right:60px;
 
   .profile {
     display: flex;
@@ -120,7 +133,7 @@ export const UserDetailsContainer = styled.div`
     div {
       display: flex;
       flex-direction: column;
-      margin-left: 10px;
+      
     }
 
     h2 {

@@ -8,43 +8,22 @@ import { ButtonContainer } from '../styles/settingStyles';
 import { Spinner, useToast } from '@chakra-ui/react';
 import { saveQuestionToFirestore } from '../firebase/helpers/questionHelper';
 import ImageUploading from 'react-images-uploading';
+import ImageUploader from "react-images-upload";
+import props from 'prop-types';
+import { v4 } from "uuid";
+import { storage} from "../firebase/firebase";
+
 
 export default function Ask() {
-  const [selectedFile, setSelectedFile] = useState()
     const [preview, setPreview] = useState()
-
-    // create a preview as a side effect, whenever selected file is changed
-    useEffect(() => {
-        if (!selectedFile) {
-            setPreview(undefined)
-            return
-        }
-
-        const objectUrl = URL.createObjectURL(selectedFile)
-        setPreview(objectUrl)
-
-        // free memory when ever this component is unmounted
-        return () => URL.revokeObjectURL(objectUrl)
-    }, [selectedFile])
-
-    const onSelectFile = e => {
-        if (!e.target.files || e.target.files.length === 0) {
-            setSelectedFile(undefined)
-            return
-        }
-
-        // I've kept this example simple by using the first image instead of multiple
-        setSelectedFile(e.target.files[0])
-    }
-
-
-
+   
+   
+    
   const [title, setTitle] = useState('');
   const [tags, setTags] = useState([]);
   const [description, setDescription] = useState('');
   const [body, setBody] = useState('');
-   const [images, setImages] = useState([]);
-   const [selectedImage, setSelectedImage] = useState(null);
+  
 
   const [tagInputValue, setTagInputValue] = useState('');
   const [isMarkdownPreview, setIsMarkdownPreview] = useState(false);
@@ -55,14 +34,10 @@ export default function Ask() {
   const user = useSelector(state => state.user?.user);
 
   const isNotEmpty = (str) => str.trim().length !== 0;
-  const canAskQuestion = isNotEmpty(title) && isNotEmpty(description) && isNotEmpty(body)&& preview.length && tags.length !== 0;
+  const canAskQuestion = isNotEmpty(title) && isNotEmpty(description) && isNotEmpty(body) && tags.length !== 0;
  
   const maxNumber = 69;
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    console.log(imageList, addUpdateIndex);
-    setImages(imageList);
-  };
+ 
 
   const askQuestion = () => {
     setIsLoading(true);
@@ -73,7 +48,7 @@ export default function Ask() {
       body,
       username: user?.username,
       userEmail: user?.email,
-      preview
+      
     
     }).then(() => {
       setIsLoading(false);
@@ -95,6 +70,7 @@ export default function Ask() {
         status: 'error',
       });
     })
+  
   }
 
   return (
@@ -102,12 +78,12 @@ export default function Ask() {
       <Container>
         <h2>Post your problems and find solutions</h2>
         <div className='input'>
-          <h3>Title ( {title.length} / 100 )</h3>
+          <h3>Title ( {title.length} / 25 )</h3>
           <input
             placeholder='I need a fertiliser :('
             value={title}
             onChange={(e) => {
-              if (e.target.value.length > 100) return;
+              if (e.target.value.length > 25) return;
               setTitle(e.target.value);
             }}
           />
@@ -117,7 +93,7 @@ export default function Ask() {
           {tags.length > 0 && <div className='tags'>
             {tags.map((tag, idx) => <span key={idx}>{tag}</span>)}
           </div>}
-          <input
+          <input 
             placeholder='Fertilizer, soil'
             value={tagInputValue}
             onChange={(e) => {
@@ -127,10 +103,17 @@ export default function Ask() {
               setTags(tagsFromValue)
             }}
           />
+          <div className="main">
+            <div className="uploadimage">
+                <label htmlFor="imgs">Upload</label>
+            </div>
+            
         </div>
-        <div className='input'>
+      
+        
+        <div  style={{marginTop:-300,marginLeft:600}}>
           <h3>Short Description ( {description.length} / 250 )</h3>
-          <textarea
+          <textarea style={{marginTop:10}}
             placeholder='Short explanation of your problem'
             value={description}
             style={{ resize: 'none' }}
@@ -140,15 +123,12 @@ export default function Ask() {
             }}
           />
         </div>
-        <div>
-        <input type='file' value={images} onChange={onSelectFile} accept="image/png, image/jpeg" />
-            {selectedFile &&  <img src={preview} /> }
-        </div>
-        <div className='input markdown-edit'>
-          <h3>Explain your problem ✍️ (Markdown supported)</h3>
+       </div>
+        <div className='input markdown-edit' style={{marginLeft:600}}>
+          <h3 style={{marginLeft:20}}>Explain your problem ✍️ (Markdown supported)</h3>
           <button
             onClick={() => setIsMarkdownPreview(!isMarkdownPreview)}
-            style={{ background: isMarkdownPreview ? 'var(--accent-color)' : 'var(--secondary-color)' }}
+            style={{ marginRight:50,background: isMarkdownPreview ? 'var(--accent-color)' : 'var(--secondary-color)' }}
           >Show {isMarkdownPreview ? 'Raw' : 'Preview'}</button>
           {isMarkdownPreview ? <MarkdownPreview markdown={body} /> : <textarea
             placeholder='My plant had a huge green bug on it, with holes on the leafs'

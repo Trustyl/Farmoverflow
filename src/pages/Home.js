@@ -11,7 +11,7 @@ export default function Home() {
     <AuthWrapper authenticationRequired={false}>
       <Container>
         <Main>
-          <div>
+          <div style={{marginLeft:140,marginRight:140}}>
             <h1>
               Lets, <br />
               communicate <span>about plants</span>, <br />
@@ -19,16 +19,16 @@ export default function Home() {
             </h1>
             <button onClick={() => history.push('/login')}>Get Started</button>
           </div>
-          <img src={seedling} alt="apple" />
+          <img  style={{margin:100}} src={seedling} alt="apple" />
         </Main>
-        <Content>
-          <h2>Farmlance, what ??</h2>
-          <p>
+        <Content >
+          <h2 style={{marginLeft:140}}>Farmlance, what ??</h2>
+          <p style={{marginLeft:140}}>
             <span>Farmlance</span> is an online community to ask questions about
             your plants conditions . You can ask questions or help others by answering their questions .
             Its basically <span>StackOverflow</span> but for farmers or the agric idustry
           </p>
-          <button onClick={() => history.push('src/pages/Login.js')}>Find solutions to your problem</button>
+          <button  style={{marginLeft:140}} onClick={() => history.push('src/pages/Login.js')}>Find solutions to your problem</button>
         </Content>
       </Container>
     </AuthWrapper>

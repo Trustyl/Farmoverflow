@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 30px;
+  
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color:white;
 `
 
 export const QuestionAndAnswerWrapper = styled.div`
@@ -18,10 +19,14 @@ export const QuestionAndAnswerWrapper = styled.div`
 `
 
 export const QuestionPart = styled.div`
-  width: 100%;
+  width: 50%;
+  margin-left:30px;
 
   h1 {
+    margin-left:20px;
     font-size: 30px;
+    color:black;
+    font-weight:700;
   }
 
   .tags {
@@ -29,27 +34,33 @@ export const QuestionPart = styled.div`
     margin-top: 40px;
     max-width: 100%;
     overflow-x: scroll;
+    
+    
 
     span {
       border-radius: 10px;
-      border: 2px solid var(--accent-color);
+      border: 2px solid var(--black);
       margin-right: 15px;
       padding: 8px 20px;
       font-size: 22px;
       white-space: nowrap;
+      background-color:black;
     }
   }
 
   h2 {
     margin-top: 30px;
     font-size: 25px;
+    color:black;
+    margin-left:600px
+    
   }
 
   .question {
-    background: var(--secondary-color);
+    background: var(--black);
     padding: 30px;
     border-radius: 20px;
-    margin-top: 30px;
+    margin-top: 5px;
   }
 
   .description-vote { 
@@ -71,6 +82,7 @@ export const QuestionPart = styled.div`
     p {
       font-size: 22px;
       margin: 5px 0px;
+      
     }
 
     button {
@@ -110,7 +122,7 @@ export const QuestionPart = styled.div`
       }
       
       .share { 
-        color: var(--accent-color); 
+        color:blue; 
       }
       
       .delete { 
@@ -122,6 +134,7 @@ export const QuestionPart = styled.div`
     p {
       .cool {
         color: var(--accent-color);
+        
       }
     }
 
@@ -184,8 +197,9 @@ export const AnswerContainer = styled.div`
 
   .nop {
     font-size: 18px;
-    color: var(--text-opacity-color);
+    color:black;
     margin-top: 10px;
+    margin-left:30px
   }
 
   .answer {

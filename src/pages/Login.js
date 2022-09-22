@@ -12,6 +12,11 @@ export default function Login() {
 
   const showToast = useToast();
   const dispatchAction = useDispatch();
+  const signIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .catch((error) => alert(error.message));
+  };
 
   const loginWithGoogle = () => {
     setIsLoading(true);
@@ -45,7 +50,7 @@ export default function Login() {
 
   return (
     <AuthWrapper authenticationRequired={false}>
-      <Flex height="90vh" alignItems="center" justifyContent="center" >
+      <Flex height="90vh" alignItems="center" justifyContent="center" background="var(--primary-color)">
         <Flex direction="column" width="45vh" background="var(--secondary-color)" p={12} rounded={6}>
           <Heading mb={4}>Get started</Heading>
           <Text mb={4} opacity="0.5">

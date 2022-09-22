@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderContainer, Button, StyledButton, AlertDiv } from '../styles/headerStyles';
+import { HeaderContainerBlack, HeaderContainer, Button, StyledButton, AlertDiv } from '../styles/headerStyles';
 import { useDisclosure } from '@chakra-ui/react';
 
 import CustomModal from './Modal';
@@ -33,13 +33,16 @@ export default function Header() {
   }
 
   return (
-    <HeaderContainer>
-      <div style={{ cursor: 'pointer' }} onClick={() => history.push('/app')}>
+    <div>
+       { !user &&<HeaderContainer >
+      <div style={{ cursor: 'pointer',margin:50}} onClick={() => history.push('/app')}>
         <img className='logo-text' src={logoText} alt='celloverflow' />
         <img className='logo-icon' src={logoIcon} alt='celloverflow' />
       </div>
+      {!user && <Button style={{ margin:50}} onClick={() => history.push('/login')}>Login</Button>}
 
-      {!user && <Button onClick={() => history.push('/login')}>Login</Button>}
+      
+{/* 
       {user && <CustomModal
         isOpen={isOpen}
         onOpen={onOpen}
@@ -60,7 +63,23 @@ export default function Header() {
           <StyledButton onClick={() => redirect(`/settings`)} style={{ background: 'var(--accent-color)' }}>Settings </StyledButton>
           <StyledButton onClick={logout} style={{ background: 'var(--error-color)' }}>Logout 🚶‍♂️</StyledButton>
         </AlertDiv>
-      </CustomModal>}
-    </HeaderContainer>
+      </CustomModal>} */}
+    
+    </HeaderContainer>}
+   { user && <HeaderContainerBlack>
+    <div style={{ cursor: 'pointer',margin:50}} onClick={() => history.push('/app')}>
+        <img className='logo-text' src={logoText} alt='celloverflow' />
+        <img className='logo-icon' src={logoIcon} alt='celloverflow' />
+      </div> 
+
+{ user && <div style={{marginLeft:870}}>
+   <button style={{background:"black",height:50,width:150,borderRadius:50,fontWeight:"bold",fontSize:16}} onClick={() => redirect(`/ask`)}>Ask a question</button>
+</div>}
+{ user && <div style={{marginRight:30}}>
+   <button style={{background:"white",height:50,width:150,borderRadius:50,fontWeight:"bold",fontSize:20,color:"red"}} onClick={logout}>Logout</button>
+</div> }     
+    </HeaderContainerBlack>} 
+    </div>
+    
   )
 }

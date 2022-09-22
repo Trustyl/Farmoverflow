@@ -1,9 +1,3 @@
-/*
-Dear me,
-Try to upgrade to firebase v9 beta to reduce bundle size
-And share some videos of TechWithTim to your friends (first make some)
-*/
-
 import firebase from 'firebase';
 import firebaseConfig from './firebaseConfig'; // create a file with firebase config
 

@@ -1,17 +1,23 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 150px 50px;
+  // margin: 150px 50px;
+  
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+    font-family: 'Nunito', sans-serif !important;
+    
 
-  @media (max-width: 1300px) {
-    margin: 100px 30px;
-  }
 
-  @media(max-width: 570px) {
-    margin: 50px 10px;
-  }
+  // @media (max-width: 1300px) {
+  //   margin: 100px 30px;
+  // }
 
-  margin-bottom: 30px !important;
+  // @media(max-width: 570px) {
+  //   margin: 50px 10px;
+  // }
+
+  // margin-bottom: 30px !important;
 `
 
 export const Main = styled.div`

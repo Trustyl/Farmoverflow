@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 30px;
+ 
+  height:1500px;
+  background-color:white;
 
   h2 {
     font-size: 25px;
     margin-bottom: 30px;
+    color:black;
+    font-weight:900;
+    margin-left:30px;
   }
 
   .input {
     margin-bottom: 20px;
+    margin-left:30px;
 
     h3 {
       margin-bottom: 10px;
@@ -18,21 +24,25 @@ export const Container = styled.div`
 
   h3 {
     font-size: 22px;
-    color: var(--text-opacity-color);
+    color: black;
+    margin-left:30px;
   }
 
   input {
     margin-top: 10px;
-    width: 100%;
-    background: var(--secondary-color);
+    margin-left:30px;
+    width: 30%;
+    background: var(--black);
     padding: 20px;
     border-radius: 12px;
     font-size: 20px;
+    box-shadow: 4px 4px 8px #000000;
+
   }
   
   textarea {
-    width: 100%;
-    background: var(--secondary-color);
+    width: 80%;
+    background: var(--black);
     color: #fff;
     padding: 20px;
     font-size: 22px;
@@ -63,6 +73,7 @@ export const Container = styled.div`
       font-size: 20px;
       transition: 0.3s;
       padding: 0px 13px;
+      margin-right:-40px
       
       &:hover {
         opacity: 0.5;

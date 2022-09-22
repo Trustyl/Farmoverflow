@@ -36,14 +36,18 @@ export default function PostSection({ targetUsername }) {
   }, [showToast, user, targetUsername])
 
   return (
+    
     <PostContainer>
+      <Text fontSize="45" color="black" style={{margin:30,fontWeight:"bold",borderBottomWidth:3, borderColor:"whitesmoke"}}>Questions</Text>
       {isLoading && (
         <SkeletonTheme color="var(--secondary-color)" highlightColor="#444">
-          <Skeleton height={260} count={3} style={{ borderRadius: '25px', marginBottom: "10px" }} />
+          <Skeleton height={200} count={3} style={{ borderRadius: '25px', marginBottom: "10px" }} />
         </SkeletonTheme>
       )}
+      
       {!isLoading && questions.map(question => (
-        <Post onClick={() => history.push(`/question/${question?.id}`)} key={question?.id}>
+        
+        <Post className='post' onClick={() => history.push(`/question/${question?.id}`)} key={question?.id} >
           <h3>{question?.title}</h3>
           <p>{question?.description}</p>
           <div className='bottom'>
@@ -54,8 +58,9 @@ export default function PostSection({ targetUsername }) {
           </div>
         </Post>
       ))}
+      
       {!isLoading && questions.length === 0 && (
-        <Text fontSize="xl">There is no questions</Text>
+        <Text fontSize="xl" color="black" style={{marginLeft:30}}>There is no questions</Text>
       )}
     </PostContainer>
   );

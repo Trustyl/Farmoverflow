@@ -4,6 +4,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--primary-color);
 
   /* hiding & displaying logos accordingly  */
   img { width: 200px; }
@@ -17,8 +18,32 @@ export const HeaderContainer = styled.div`
     img { width: 40px; }
     
   }
+  
 `
+export const HeaderContainerBlack= styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--black-color);
+  border-bottom-width: 3px;
+  border-color: whitesmoke;
+  border-radius:0;
+  
 
+
+  /* hiding & displaying logos accordingly  */
+  img { width: 200px; }
+
+  .logo-icon { display: none; }  
+
+  @media (max-width: 800px) {
+
+    .logo-icon { display: block; }
+    .logo-text { display: none; }
+    img { width: 40px; }
+    
+  }
+  `
 export const Button = styled.button`
     display: flex;
     align-items: center;
