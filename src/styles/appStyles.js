@@ -117,7 +117,7 @@ export const UserDetailsContainer = styled.div`
   padding: 40px;
   margin-top:160px;
   height:fits content;
-  margin-left:700px;
+  margin-left:400px;
 
   .profile {
     display: flex;
