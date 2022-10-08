@@ -5,6 +5,8 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   background: var(--primary-color);
+width:1005;
+  
 
   /* hiding & displaying logos accordingly  */
   img { width: 200px; }

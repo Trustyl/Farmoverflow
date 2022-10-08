@@ -37,11 +37,13 @@ export const Container = styled.div`
     border-radius: 12px;
     font-size: 20px;
     box-shadow: 4px 4px 8px #000000;
+  
 
   }
   
   textarea {
     width: 80%;
+    height: 280px;
     background: var(--black);
     color: #fff;
     padding: 20px;
@@ -53,6 +55,7 @@ export const Container = styled.div`
     display: flex;
     margin-bottom: 10px;
     overflow-x: scroll;
+    color:black;
 
     span {
       padding: 8px 20px;
@@ -69,7 +72,7 @@ export const Container = styled.div`
       margin-top: 10px;
       margin-bottom: 20px;
       border-radius: 8px;
-      height: 50px;
+      height: 30px;
       font-size: 20px;
       transition: 0.3s;
       padding: 0px 13px;

@@ -111,7 +111,7 @@ export default function Ask() {
         </div>
       
         
-        <div  style={{marginTop:-300,marginLeft:600}}>
+        <div  style={{marginTop:-360,marginLeft:570}}>
           <h3>Short Description ( {description.length} / 250 )</h3>
           <textarea style={{marginTop:10}}
             placeholder='Short explanation of your problem'
@@ -138,25 +138,34 @@ export default function Ask() {
           />}
         </div>
         <ButtonContainer>
-          <ButtonContainer>
+          <ButtonContainer >
             <button
               onClick={askQuestion}
               style={isLoading || !canAskQuestion ? {
                 opacity: '0.5',
                 cursor: 'not-allowed',
-              } : {}}
-            >{isLoading ? <Spinner /> : 'Ask'}
+                width: 200,
+                marginLeft:400,
+                marginTop:60,
+              } : { width: 200,marginLeft:400,
+                marginTop:60,}}
+            >{isLoading ? <Spinner style={{width: 200,marginLeft:400,
+              marginTop:60,}} /> : 'Ask'}
             </button>
             <button
               onClick={() => history.push('/app')}
               style={isLoading ? {
                 background: 'var(--error-color)',
-                marginLeft: '10px',
+                marginLeft:500,
                 opacity: '0.5',
                 cursor: 'not-allowed',
+                marginRight:400,
+                
               } : {
                 background: 'var(--error-color)',
-                marginLeft: '10px',
+                width: 200,
+                marginRight:500,
+                marginTop:60,
               }}
               disabled={isLoading}
             >Cancel</button>

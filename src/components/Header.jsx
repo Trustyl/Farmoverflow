@@ -73,10 +73,10 @@ export default function Header() {
       </div> 
 
 { user && <div style={{marginLeft:870}}>
-   <button style={{background:"black",height:50,width:150,borderRadius:50,fontWeight:"bold",fontSize:16}} onClick={() => redirect(`/ask`)}>Ask a question</button>
+   <button style={{background:"#245b48",height:50,width:150,borderRadius:50,fontWeight:"bold",fontSize:16}} onClick={() => redirect(`/ask`)}>Ask a question</button>
 </div>}
 { user && <div style={{marginRight:30}}>
-   <button style={{background:"white",height:50,width:150,borderRadius:50,fontWeight:"bold",fontSize:20,color:"red"}} onClick={logout}>Logout</button>
+   <button style={{background:"white",height:50,width:150,borderRadius:50,fontWeight:"bold",fontSize:20,color:"#245b48"}} onClick={logout}>Logout</button>
 </div> }     
     </HeaderContainerBlack>} 
     </div>

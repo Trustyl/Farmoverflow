@@ -20,7 +20,7 @@ Oh lord help us, style our mind with css
     --black:#011601;
     --accent-color: #6fc878;
     --error-color: #FE4343;
-    --text-color: #00000;
+    --text-color: #ffffff;
     --text-opacity-color: #D1D1D1;
     --profile:#000000;
 }
@@ -33,18 +33,20 @@ Oh lord help us, style our mind with css
 }
 
 
-/* body.Home {
+body {
     background-color: var(--question-color) !important;
     color: var(--text-color) !important;
     font-family: 'Nunito', sans-serif !important;
-    padding: 50px 60px !important;
-} */
+    width:auto;
 
-/* @media (max-width: 700px) {
+  
+}
+
+@media (max-width: 100px) {
     body {
-        padding: 20px 30px !important;
+        padding: 0px !important;
     }
-} */
+}
 
 
 /* custom scroll bar */

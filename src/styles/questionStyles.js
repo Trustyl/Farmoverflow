@@ -122,12 +122,12 @@ export const QuestionPart = styled.div`
       }
       
       .share { 
-        color:blue; 
+        color:black; 
       }
       
       .delete { 
         font-weight: 400;
-        color: var(--error-color); 
+        color: black; 
       }
     }
 
@@ -190,9 +190,11 @@ export const MarkdownContainer = styled.div`
 
 export const AnswerContainer = styled.div`
   margin-top: 30px;
+  margin-left:50px;
 
   h2 {
     font-size: 22px;
+    margin-left:50px;
   }
 
   .nop {
@@ -207,6 +209,8 @@ export const AnswerContainer = styled.div`
     padding: 30px;
     border-radius: 20px;
     margin-top: 30px;
+    width:700px;
+    
   }
 
   .description-vote { 
@@ -268,18 +272,19 @@ export const AnswerContainer = styled.div`
       }
       
       .share { 
-        color: var(--accent-color); 
+        color: black; 
       }
       
       .delete { 
         font-weight: 400;
-        color: var(--error-color); 
+        color: red; 
       } 
     }
 
     p {
       .cool {
         color: var(--accent-color);
+        margin-right:750px;
       }
     }
 

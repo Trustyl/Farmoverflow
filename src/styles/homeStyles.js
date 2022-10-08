@@ -6,11 +6,13 @@ export const Container = styled.div`
     background-color: var(--primary-color) !important;
     color: var(--text-color) !important;
     font-family: 'Nunito', sans-serif !important;
+    width:fit-content;
+   
     
 
 
   // @media (max-width: 1300px) {
-  //   margin: 100px 30px;
+  //   margin: 0;
   // }
 
   // @media(max-width: 570px) {

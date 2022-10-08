@@ -81,7 +81,9 @@ export default function Settings() {
                     style={isLoading ? {
                         opacity: '0.5',
                         cursor: 'not-allowed',
-                    } : {}}
+                        width:300,
+                        marginLeft:400,
+                    } : {width:300,marginLeft:400,}}
                 >{isLoading ? <Spinner /> : 'Save'}
                 </button>
                 <button
@@ -91,9 +93,12 @@ export default function Settings() {
                         marginLeft: '10px',
                         opacity: '0.5',
                         cursor: 'not-allowed',
+                        width:300,
+                        marginRight:400,
                     } : {
                         background: 'var(--error-color)',
-                        marginLeft: '10px',
+                        marginRight:400,
+                        width:300,
                     }}
                     disabled={isLoading}
                 >Cancel</button>

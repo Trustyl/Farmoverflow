@@ -120,7 +120,7 @@ export default function QuestionPart({ question, user }) {
             }}
           ><i className="share fas fa-share-alt"></i></CopyToClipboard>
           {user?.email === question?.userEmail && <DeleteBtn questionId={question?.id} />}
-          {user?.email !== question?.userEmail && <AnswerBtn questionId={question?.id} user={user} />}
+          {user?.email !== question?.userEmail && <AnswerBtn questionId={question?.id} user={user} style={{color:"black"}} />}
         </div>
         <p><span className="hide">asked by</span> <span className="cool" onClick={() => history.push(`/user/${question?.username}`)}>@{question?.username}</span></p>
       </div>

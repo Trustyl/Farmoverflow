@@ -4,7 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 1000px;
+  width:fit-content;
+  height:fit-content;
   
   
     background: var(--question-color);
@@ -13,15 +14,15 @@ export const Container = styled.div`
     
 
   .profile-hide {
-    @media (max-width: 1446px) {
+    @media (max-width: fit-content) {
       display: none;
     }
   }
 `
 
 export const PostContainer = styled.div`
-  width: 700px;
-  height: 5px;
+  width: auto;
+  height: auto;
   margin-left: 30px;
   margin-top: 30px;
   
@@ -116,7 +117,7 @@ export const UserDetailsContainer = styled.div`
   padding: 40px;
   margin-top:160px;
   height:fits content;
-  margin-right:60px;
+  margin-left:400px;
 
   .profile {
     display: flex;

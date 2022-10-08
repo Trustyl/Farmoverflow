@@ -3,8 +3,9 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 // dark theme for CHAKRA UI
 const theme = extendTheme({
   config: {
-    initialColorMode: 'dark',
-    useSystemColorMode: true
+    initialColorMode: 'light',
+    
+    useSystemColorMode: false
   }
 });
 
