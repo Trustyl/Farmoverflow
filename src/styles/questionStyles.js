@@ -26,7 +26,7 @@ export const QuestionPart = styled.div`
     margin-left:20px;
     font-size: 30px;
     color:black;
-    font-weight:700;
+    font-weight:400;
   }
 
   .tags {
